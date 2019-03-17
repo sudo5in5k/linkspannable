@@ -2,16 +2,14 @@ package com.example.spannablestringtest
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
-import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
-import android.text.method.MovementMethod
 import android.text.style.ClickableSpan
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -36,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         return spannableTextBuilder.apply {
             setSpan(object : ClickableSpan() {
                 override fun onClick(view: View) {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com"))
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(URL))
                     view.context.startActivity(intent)
                 }
 
@@ -46,5 +44,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }, startPos, startPos + highLightText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
+    }
+
+    companion object {
+        private const val URL = "https://github.com/sudo5in5k/linkspannable"
     }
 }
