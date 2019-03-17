@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SpannableStringTest</string>
+    <string name="high_light_text">こちら</string>
+    <string name="introduction_text">レポジトリはこちら</string>
+</resources>
